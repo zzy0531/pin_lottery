@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>抽奖首页 - 填写需要抽奖的想法相关信息</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	h3 small { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+	<div class="jumbotron">
+  		<h1>知乎想法抽奖</h1>
+  		<p>
+  			由于知乎未提供给想法抽奖的工具，这里我简单的提供了一个抽奖的小插件，使用方法很简单。只需要在下面的表单中填入想法的链接以及要抽奖的人数即可。</p>
+  		<p>抽奖的流程是：</p>
+  		<p>
+  			1、每当提交时会自动采集转发此条想法的所有的用户ID
+  		</p>
+  		<p>
+  			2、使用Python中的random函数随机抽奖
+  		</p>
+	</div>
+
+	<div class="page-header">
+	  <h3>想法中奖名单 <small>想法ID <a href="{{pin_url}}">{{pin_id}}</a></small></h3>
+	</div>
+	<ul class="list-group">
+		{% for x in result: %}
+	  		<li class="list-group-item"><a href = "{{x}}">{{result[x]}}</a></li>
+	  	{%endfor%}
+	</ul>
+
+</div>
+
+</body>
+</html>

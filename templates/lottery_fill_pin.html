@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>抽奖首页 - 填写需要抽奖的想法相关信息</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="jumbotron">
+  		<h1>知乎想法抽奖</h1>
+  		<p>
+  			由于知乎未提供给想法抽奖的工具，这里我简单的提供了一个抽奖的小插件，使用方法很简单。只需要在下面的表单中填入想法的链接以及要抽奖的人数即可。</p>
+  		<p>抽奖的流程是：</p>
+  		<p>
+  			1、每当提交时会自动采集转发此条想法的所有的用户ID
+  		</p>
+  		<p>
+  			2、使用Python中的random函数随机抽奖
+  		</p>
+	</div>
+
+	<form action = '/pin_users' methods = 'POST'>
+		<div class="input-group">
+			  <span class="input-group-addon" id="basic-addon1">想法链接：</span>
+			  <input type="text" class="form-control" placeholder="复制想法链接至此" aria-describedby="basic-addon1" name = 'pin_url'>
+			</div>
+			<br>
+			<div class="input-group">
+			  <span class="input-group-addon" id="basic-addon1">要抽奖几个人：</span>
+			  <input type="text" class="form-control" placeholder="要抽奖几个人？请填写数字" aria-describedby="basic-addon1" name = 'pin_num'>
+		</div><br>
+		<center><button type="submit" class="btn btn-primary">开始抽奖</button></center>
+	</form>
+
+
+</div>
+
+</body>
+</html>
